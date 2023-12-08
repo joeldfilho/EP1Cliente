@@ -11,6 +11,9 @@ public class Cliente {
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
 
+    /*
+    * Aqui é gerado o objeto cliente. Cada vez que gerar um novo será criado um novo socket, permitindo a utilizaç~~ao de vários usuários ao mesmo tempo
+    * */
     public Cliente(Socket socket) {
         try{
             this.socket = socket;
@@ -23,6 +26,9 @@ public class Cliente {
 
     }
 
+    /*
+    * A mensagem só é enviada quando o bufferedWriter faz o flush()
+    * */
     public void enviarMensagemServidor(String messageToSend) {
         try {
             bufferedWriter.write(messageToSend);
@@ -52,6 +58,9 @@ public class Cliente {
         }
     }
 
+    /*
+    * A funcao de receber mensagens do servidor roda em uma thread própria pois ela atualiza dinamicamente a tela com a mensagem. Para que essa atualização seja feita o JavaFX precisa de uma nova thread
+    * */
     public void receberMensagemServidor(VBox vboxMessages) {
 
 

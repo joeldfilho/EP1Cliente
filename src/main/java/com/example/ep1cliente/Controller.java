@@ -39,6 +39,9 @@ public class Controller implements Initializable {
     private ScrollPane sp_main;
     private Cliente cliente;
 
+    /*
+    * Classe responsável por inicializar o componente FXML que exibe as mensagens recebidas e enviadas pelo cliente.
+    * */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -88,6 +91,9 @@ public class Controller implements Initializable {
         });
     }
 
+    /*
+    * A caixa de texto em que as mensagens aparecem é usada como uma Label, assimn ela atualiza com novas mensagens e já desce automaticamente.
+    * */
     public static void addLabel(String msgFromServer, VBox vBox){
 
         HBox hBox = new HBox();
